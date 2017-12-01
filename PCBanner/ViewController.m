@@ -19,6 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     NewsBanner *banner=[[NewsBanner alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 30)];
+    banner.backgroundColor=[UIColor yellowColor];
     banner.newsBannerDelegate=self;
     banner.center=self.view.center;
     banner.duration=2.0f;
