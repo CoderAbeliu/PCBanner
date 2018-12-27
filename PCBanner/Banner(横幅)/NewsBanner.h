@@ -29,8 +29,15 @@
  显示label
  */
 @property(nonatomic,strong)UILabel *bannerLabel;
+
+/**
+ BannerDelegate
+ */
 @property(nonatomic,weak)id<NewsBannerDelegate>newsBannerDelegate;
 
 
+/**
+ 开启动画
+ */
 -(void)start;
 @end

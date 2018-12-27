@@ -12,7 +12,7 @@
 @end
 @implementation NewsBanner
 
--(instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame {
     self=[super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
@@ -29,7 +29,7 @@
     }
     return self;
 }
--(void)setBannerList:(NSArray *)bannerList{
+- (void)setBannerList:(NSArray *)bannerList {
     
     if (_bannerList!=bannerList) {
         _bannerList =[[NSArray alloc]init];
@@ -39,20 +39,20 @@
         }
     }
 }
--(void)tap:(UILabel *)laber{
+- (void)tap:(UILabel *)laber {
     if (self.newsBannerDelegate &&[self.newsBannerDelegate respondsToSelector:@selector(newsBanner:didSelectIndex:)]) {
         [self.newsBannerDelegate newsBanner:self didSelectIndex:self.pageCount];
     }
     
 }
 
--(void)start{
+- (void)start {
     if (self.bannerList.count!=0) {
         [NSTimer scheduledTimerWithTimeInterval:self.duration target:self selector:@selector(displayLabel) userInfo:nil repeats:YES];
     }
     
 }
--(void)displayLabel{
+- (void)displayLabel {
     self.pageCount++;
     if (self.pageCount>=self.bannerList.count) {
         self.pageCount=0;
